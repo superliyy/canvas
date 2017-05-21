@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#c{
+				background: #ddd;
+				/*width: 600px;
+				height: 400px;*/
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- canvas大小，是300*150 -->
+		<!--
+			样式中设置大小，将300*150大小的画布和画布中的内容，放大到该样式
+			在标签属性中设置大小， 就是只设置画布大小
+		-->
+		<canvas id="c" width="600" height="400"></canvas>
+		
+		<script>
+			//得到canvas对象
+			var oC = document.getElementById('c');
+			oC.width = 400;
+			oC.height = 600;
+			
+			//获得canvas的上下文
+			var oGc = oC.getContext('2d');
+			
+			oGc.strokeStyle = 'darkmagenta';
+			oGc.lineWidth = 4;
+			
+			oGc.beginPath();
+			
+			oGc.moveTo(300, 150);
+			// 圆心x,圆心y, 半径r, 起始弧度, 结束弧度, false=顺时针
+			oGc.arc(150, 150, 150, 0, 90*Math.PI/180, false);
+			
+			oGc.closePath();
+			
+			oGc.stroke();
+			
+		</script>
+		
+	</body>
+</html>

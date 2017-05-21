@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#c{
+				background: #ddd;
+				/*width: 600px;
+				height: 400px;*/
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- canvas大小，是300*150 -->
+		<!--
+			样式中设置大小，将300*150大小的画布和画布中的内容，放大到该样式
+			在标签属性中设置大小， 就是只设置画布大小
+		-->
+		<canvas id="c" width="600" height="400"></canvas>
+		
+		<script>
+			//得到canvas对象
+			var oC = document.getElementById('c');
+			oC.width = 400;
+			oC.height = 400;
+			
+			//获得canvas的上下文
+			var oGc = oC.getContext('2d');
+			
+			//填充
+			//描边
+			
+			oGc.fillStyle = 'mediumvioletred';
+			oGc.strokeStyle = 'mediumvioletred';
+			oGc.lineWidth = 20;
+			oGc.lineJoin = 'bevel';//round miter bevel
+			
+//			oGc.lineCap = 'butt';
+			oGc.fillRect(50, 50, 50, 50);
+			
+			oGc.strokeRect(100, 100, 100, 100);
+			
+			oGc.lineWidth = 1;
+			oGc.strokeStyle = 'darkblue';
+			oGc.strokeRect(100, 100, 100, 100);
+			
+			oGc.fillStyle = 'darkcyan';
+			oGc.strokeStyle = 'darkgoldenrod';
+			
+			
+			oGc.lineWidth = 20;
+			oGc.strokeRect(200, 200, 80, 80);
+			oGc.fillRect(200, 200, 80, 80);
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#c{
+				background: #ddd;
+				/*width: 600px;
+				height: 400px;*/
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- canvas大小，是300*150 -->
+		<!--
+			样式中设置大小，将300*150大小的画布和画布中的内容，放大到该样式
+			在标签属性中设置大小， 就是只设置画布大小
+		-->
+		<canvas id="c" width="600" height="400"></canvas>
+		
+		<script>
+			//得到canvas对象
+			var oC = document.getElementById('c');
+			oC.width = 400;
+			oC.height = 600;
+			
+			//获得canvas的上下文
+			var oGc = oC.getContext('2d');
+			
+//			4:6:7:9
+			var count = 4+3+7+9;
+			var p1 = 4.0/count;
+			var p2 = 3.0/count;
+			var p3 = 7.0/count;
+			var p4 = 9.0/count;
+			
+			oGc.beginPath();
+			oGc.moveTo(200, 300);
+			oGc.arc(200, 300, 180, 0, p1*2*Math.PI, false);
+			oGc.closePath();
+			oGc.fillStyle = 'darkgreen';
+			oGc.fill();
+			
+			
+			oGc.beginPath();
+			oGc.moveTo(200, 300);
+			oGc.arc(200, 300, 180, p1*2*Math.PI, (p1+p2)*2*Math.PI, false);
+			oGc.closePath();
+			oGc.fillStyle = 'darkcyan';
+			oGc.fill();
+			
+			oGc.beginPath();
+			oGc.moveTo(200, 300);
+			oGc.arc(200, 300, 180, (p1+p2)*2*Math.PI, (p1+p2+p3)*2*Math.PI, false);
+			oGc.closePath();
+			oGc.fillStyle = 'salmon';
+			oGc.fill();
+			
+			oGc.beginPath();
+			oGc.moveTo(200, 300);
+			oGc.arc(200, 300, 180, (p1+p2+p3)*2*Math.PI, (p1+p2+p3+p4)*2*Math.PI, false);
+			oGc.closePath();
+			oGc.fillStyle = 'darkkhaki';
+			oGc.fill();
+			
+		</script>
+		
+	</body>
+</html>

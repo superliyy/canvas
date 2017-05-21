@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#c{
+				background: #ddd;
+				/*width: 600px;
+				height: 400px;*/
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- canvas大小，是300*150 -->
+		<!--
+			样式中设置大小，将300*150大小的画布和画布中的内容，放大到该样式
+			在标签属性中设置大小， 就是只设置画布大小
+		-->
+		<canvas id="c" width="600" height="400"></canvas>
+		
+		<script>
+			//得到canvas对象
+			var oC = document.getElementById('c');
+			oC.width = 400;
+			oC.height = 600;
+			
+			//获得canvas的上下文
+			var oGc = oC.getContext('2d');
+			
+			oGc.beginPath();
+			oGc.moveTo(100, 200);
+			//绘制贝塞尔曲线
+			//一组控制点
+			//x1,y1:控制点位置
+			//x2,y2:结束点位置
+//			oGc.quadraticCurveTo(300, 200, 200, 100);
+			
+			oGc.bezierCurveTo(120, 20, 180, 180, 200, 100);
+			
+			oGc.closePath();
+			oGc.stroke();
+			
+			
+		</script>
+		
+	</body>
+</html>

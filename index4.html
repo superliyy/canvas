@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#c{
+				background: #ddd;
+				/*width: 600px;
+				height: 400px;*/
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- canvas大小，是300*150 -->
+		<!--
+			样式中设置大小，将300*150大小的画布和画布中的内容，放大到该样式
+			在标签属性中设置大小， 就是只设置画布大小
+		-->
+		<canvas id="c" width="600" height="400"></canvas>
+		
+		<script>
+			//得到canvas对象
+			var oC = document.getElementById('c');
+			oC.width = 400;
+			oC.height = 600;
+			
+			//获得canvas的上下文
+			var oGc = oC.getContext('2d');
+			
+			oGc.strokeStyle = 'darkmagenta';
+			oGc.lineWidth = 4;
+			
+			oGc.beginPath();
+			oGc.moveTo(100, 50);
+			oGc.lineTo(100, 150);
+			oGc.lineTo(200, 150);
+			oGc.closePath();
+			oGc.stroke();
+			
+			oGc.save();//将ogc上面关于样式的设置统统进行保存。
+			oGc.strokeStyle = 'darkcyan'; //对ogc上面的样式进临时的修改
+			oGc.lineWidth = 10;
+			oGc.scale(0.7, 0.7);
+			oGc.beginPath();
+			oGc.moveTo(100, 150);
+			oGc.lineTo(100, 250);
+			oGc.lineTo(200, 250);
+			oGc.closePath();
+			oGc.stroke();
+			oGc.restore();//将ogc上面关于样式的设置统统恢复回来。
+			
+			oGc.beginPath();
+			oGc.moveTo(100, 250);
+			oGc.lineTo(100, 350);
+			oGc.lineTo(200, 350);
+			oGc.closePath();
+			oGc.stroke();
+			
+			oGc.beginPath();
+			oGc.moveTo(100, 350);
+			oGc.lineTo(100, 450);
+			oGc.lineTo(200, 450);
+			oGc.closePath();
+			oGc.stroke();
+			
+			oGc.beginPath();
+			oGc.moveTo(100, 450);
+			oGc.lineTo(100, 550);
+			oGc.lineTo(200, 550);
+			oGc.closePath();
+			oGc.stroke();
+			
+			
+		</script>
+		
+	</body>
+</html>
